@@ -10,11 +10,10 @@ class QuoteBox extends Component{
     }
 
     render() {
-        const auther = 'Trump '+Math.random()
         return (
             <div id='quote-box'>
                 <div id='text'>{this.props.quote || 'xxx'}</div>
-                <div id='author'>{auther}</div>
+                <div id='author'>Trump</div>
                 <button id='new-quote' onClick={this.props.fetchQuote}>Next Quote</button>
                 <a id='tweet-quote' href={'twitter.com/intent/tweet'}>Tweet</a>
             </div>
