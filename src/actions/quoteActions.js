@@ -1,4 +1,3 @@
-import { dispatch } from "rxjs/internal/observable/pairs";
 
 export const FETCH_QUOTE = 'FETCH_QUOTE'
 export const CHANGE_COLOR = 'CHANGE_COLOR'

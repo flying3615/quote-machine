@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeColor } from './actions/quoteActions'
 import QuoteBox from './component/quoteBox'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{ backgroundColor: this.props.color||'white'}}>
+      <div className="App" style={{ backgroundColor: this.props.color || 'white'}}>
         <QuoteBox />
       </div>
     );

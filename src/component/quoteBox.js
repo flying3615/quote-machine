@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuote } from '../actions/quoteActions'
 import PropTypes from 'prop-types';
+import { CSSTransitionGroup } from 'react-transition-group'
+
 
 class QuoteBox extends Component{
 
@@ -12,7 +14,14 @@ class QuoteBox extends Component{
     render() {
         return (
             <div id='quote-box'>
-                <div id='text'>{this.props.quote || 'xxx'}</div>
+                    <CSSTransitionGroup
+                        transitionName="example"
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={300}>
+                        <div id='text' key={this.props.quote }>
+                            {this.props.quote || 'Loading....'}
+                        </div>
+                    </CSSTransitionGroup>
                 <div id='author'>Trump</div>
                 <button id='new-quote' onClick={this.props.fetchQuote}>Next Quote</button>
                 <a id='tweet-quote' href={'twitter.com/intent/tweet'}>Tweet</a>
